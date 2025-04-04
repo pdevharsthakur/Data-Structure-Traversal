@@ -35,12 +35,12 @@ Data Structure Traversal is an interactive command-line tool that allows you to 
 <table>
   <tr>
     <td align="center" width="50%">
-      <img src="https://raw.githubusercontent.com/github/explore/d9e23561bedad3429c96aac9dd0fd4fd1840b3a0/topics/graph/graph.png" width="50" /><br />
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/6n-graf.svg/320px-6n-graf.svg.png" width="120" /><br />
       <b>📊 Graphs</b><br />
       <sub>(directed and undirected)</sub>
     </td>
     <td align="center" width="50%">
-      <img src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/tree/tree.png" width="50" /><br />
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Binary_search_tree.svg/300px-Binary_search_tree.svg.png" width="120" /><br />
       <b>🌲 Trees</b><br />
       <sub>(binary trees)</sub>
     </td>
@@ -67,14 +67,14 @@ Explores all neighbors at the present depth before moving to nodes at the next d
 
 <div align="center">
 
-| Feature | Description |
-|---------|-------------|
-| ✨ **Interactive CLI** | Intuitive user interface with guided prompts |
-| 📊 **Visualization** | ASCII-based representations of graphs and trees in the terminal |
-| 🔍 **Multiple Algorithms** | Both DFS and BFS for each data structure |
-| 📄 **Custom Input** | Support for JSON formatted input files |
-| 🎯 **Type Safety** | Fully TypeScript implementation with strict typing |
-| 🎨 **Colorful Output** | Enhanced readability with color-coded visualizations |
+| Feature                    | Description                                                     |
+| -------------------------- | --------------------------------------------------------------- |
+| ✨ **Interactive CLI**     | Intuitive user interface with guided prompts                    |
+| 📊 **Visualization**       | ASCII-based representations of graphs and trees in the terminal |
+| 🔍 **Multiple Algorithms** | Both DFS and BFS for each data structure                        |
+| 📄 **Custom Input**        | Support for JSON formatted input files                          |
+| 🎯 **Type Safety**         | Fully TypeScript implementation with strict typing              |
+| 🎨 **Colorful Output**     | Enhanced readability with color-coded visualizations            |
 
 </div>
 
@@ -106,6 +106,7 @@ data-structure-traversal/
 git clone https://github.com/pdevharsthakur/Data-Structure-Traversal.git
 cd data-structure-traversal
 ```
+
 </details>
 
 <details open>
@@ -114,6 +115,7 @@ cd data-structure-traversal
 ```bash
 bun install
 ```
+
 </details>
 
 ## 🚀 Usage
@@ -128,6 +130,7 @@ bun install
 ```bash
 bun run build
 ```
+
 </details>
 
 <details open>
@@ -136,6 +139,7 @@ bun run build
 ```bash
 bun start
 ```
+
 </details>
 
 <details open>
@@ -178,6 +182,7 @@ The application accepts JSON files as input with specific formats for each data 
   }
 }
 ```
+
 </details>
 
 <details open>
@@ -211,6 +216,7 @@ The application accepts JSON files as input with specific formats for each data 
   }
 }
 ```
+
 </details>
 
 ## 📄 License
@@ -258,31 +264,47 @@ The application accepts JSON files as input with specific formats for each data 
 
 <div align="center">
   <img src="https://user-images.githubusercontent.com/709451/182802334-d9c42afe-f35d-4a7b-86ea-9985f73f20c3.png" width="100" />
+  <p style="margin-top: 15px; margin-bottom: 25px;">This project uses Bun primarily as a package manager, not as a runtime environment.</p>
 </div>
 
-This project uses Bun primarily as a package manager, not as a runtime environment. Here's why:
+<div align="center" style="display: grid; grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(2, 1fr); gap: 20px; margin: 0 auto; max-width: 900px;">
+  <div style="border: 1px solid #ddd; border-radius: 10px; padding: 24px; background-color: #f9f9f9;">
+    <div style="text-align: center;">
+      <div style="font-size: 32px; margin-bottom: 10px;">💼</div>
+      <h3 style="margin: 0 0 15px 0; color: #333; font-size: 20px; font-weight: 600;">Simple Node.js Project</h3>
+      <div style="width: 40px; height: 3px; background-color: #0074d9; margin: 0 auto 15px;"></div>
+      <p style="color: #555; line-height: 1.5;">Since this is not a fullstack application but rather a straightforward Node.js CLI tool, Bun serves as an excellent package manager with faster installation times compared to npm or yarn.</p>
+    </div>
+  </div>
+  
+  <div style="border: 1px solid #ddd; border-radius: 10px; padding: 24px; background-color: #f9f9f9;">
+    <div style="text-align: center;">
+      <div style="font-size: 32px; margin-bottom: 10px;">🛡️</div>
+      <h3 style="margin: 0 0 15px 0; color: #333; font-size: 20px; font-weight: 600;">Stability First</h3>
+      <div style="width: 40px; height: 3px; background-color: #0074d9; margin: 0 auto 15px;"></div>
+      <p style="color: #555; line-height: 1.5;">While Bun's runtime capabilities are impressive, we opted to use Node.js runtime for execution to ensure maximum stability, as Bun is still maturing as a platform.</p>
+    </div>
+  </div>
+  
+  <div style="border: 1px solid #ddd; border-radius: 10px; padding: 24px; background-color: #f9f9f9;">
+    <div style="text-align: center;">
+      <div style="font-size: 32px; margin-bottom: 10px;">🔮</div>
+      <h3 style="margin: 0 0 15px 0; color: #333; font-size: 20px; font-weight: 600;">Future-Ready</h3>
+      <div style="width: 40px; height: 3px; background-color: #0074d9; margin: 0 auto 15px;"></div>
+      <p style="color: #555; line-height: 1.5;">Using Bun as a package manager allows us to easily transition to Bun runtime in the future when it reaches greater maturity, without changing our workflow significantly.</p>
+    </div>
+  </div>
+  
+  <div style="border: 1px solid #ddd; border-radius: 10px; padding: 24px; background-color: #f9f9f9;">
+    <div style="text-align: center;">
+      <div style="font-size: 32px; margin-bottom: 10px;">⚡</div>
+      <h3 style="margin: 0 0 15px 0; color: #333; font-size: 20px; font-weight: 600;">Performance</h3>
+      <div style="width: 40px; height: 3px; background-color: #0074d9; margin: 0 auto 15px;"></div>
+      <p style="color: #555; line-height: 1.5;">Bun's package management is significantly faster than npm, which improves the developer experience especially for quick iterations.</p>
+    </div>
+  </div>
+</div>
 
-<table>
-  <tr>
-    <td width="50%">
-      <h3 align="center">💼 Simple Node.js Project</h3>
-      <p align="center">Since this is not a fullstack application but rather a straightforward Node.js CLI tool, Bun serves as an excellent package manager with faster installation times compared to npm or yarn.</p>
-    </td>
-    <td width="50%">
-      <h3 align="center">🛡️ Stability First</h3>
-      <p align="center">While Bun's runtime capabilities are impressive, I opted to use Node.js runtime for execution to ensure maximum stability, as Bun is still maturing as a platform.</p>
-    </td>
-  </tr>
-  <tr>
-    <td width="50%">
-      <h3 align="center">🔮 Future-Ready</h3>
-      <p align="center">Using Bun as a package manager allows us to easily transition to Bun runtime in the future when it reaches greater maturity, without changing our workflow significantly.</p>
-    </td>
-    <td width="50%">
-      <h3 align="center">⚡ Performance</h3>
-      <p align="center">Bun's package management is significantly faster than npm, which improves the developer experience especially for quick iterations.</p>
-    </td>
-  </tr>
-</table>
-
-<p align="center">The approach provides a good balance between leveraging Bun's speed advantages while maintaining the stability and ecosystem compatibility of Node.js.</p>
+<div align="center" style="margin-top: 30px;">
+  <p>The approach provides a good balance between leveraging Bun's speed advantages while maintaining the stability and ecosystem compatibility of Node.js.</p>
+</div>
