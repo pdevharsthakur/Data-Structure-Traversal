@@ -1,0 +1,81 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Tree Data",
+    "description": "Schema for tree traversal input data",
+    "type": "object",
+    "required": ["root"],
+    "properties": {
+      "root": {
+        "description": "The root node of the tree",
+        "$ref": "#/definitions/node"
+      },
+      "metadata": {
+        "type": "object",
+        "description": "Additional metadata about the tree (optional)",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Name of the tree"
+          },
+          "description": {
+            "type": "string",
+            "description": "Description of the tree"
+          },
+          "type": {
+            "type": "string",
+            "description": "Type of tree (e.g., binary, n-ary)",
+            "enum": ["binary", "binary-search", "n-ary", "general"]
+          }
+        }
+      }
+    },
+    "definitions": {
+      "node": {
+        "type": "object",
+        "required": ["value"],
+        "properties": {
+          "value": {
+            "type": ["string", "number"],
+            "description": "The value of the node"
+          },
+          "children": {
+            "type": "array",
+            "description": "Child nodes (for n-ary trees)",
+            "items": {
+              "$ref": "#/definitions/node"
+            }
+          },
+          "left": {
+            "description": "Left child (for binary trees)",
+            "oneOf": [
+              { "$ref": "#/definitions/node" },
+              { "type": "null" }
+            ]
+          },
+          "right": {
+            "description": "Right child (for binary trees)",
+            "oneOf": [
+              { "$ref": "#/definitions/node" },
+              { "type": "null" }
+            ]
+          },
+          "metadata": {
+            "type": "object",
+            "description": "Additional metadata for the node",
+            "properties": {
+              "color": {
+                "type": "string",
+                "description": "Node color (e.g., for red-black trees)",
+                "enum": ["red", "black"]
+              },
+              "height": {
+                "type": "number",
+                "description": "Height of the node (e.g., for AVL trees)"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  

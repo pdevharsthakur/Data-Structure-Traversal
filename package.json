@@ -1,0 +1,25 @@
+{
+  "name": "data-structure-traversal",
+  "module": "dist/main.js",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "start": "tsc && bun dist/main.js",
+    "format": "prettier --write \"src/**/*.{ts,tsx,js,jsx}\"",
+    "lint": "prettier --check \"src/**/*.{ts,tsx,js,jsx}\""
+  },
+  "devDependencies": {
+    "@types/figlet": "^1.7.0",
+    "@types/inquirer": "^9.0.7",
+    "@types/node": "^22.14.0",
+    "prettier": "^3.5.3"
+  },
+  "peerDependencies": {
+    "typescript": "^5.8.2"
+  },
+  "dependencies": {
+    "chalk": "^5.4.1",
+    "figlet": "^1.8.0",
+    "inquirer": "^12.5.2"
+  }
+}

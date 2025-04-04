@@ -1,0 +1,41 @@
+{
+    "vertices": ["A", "B", "C", "D", "E", "F"],
+    "edges": [
+      {
+        "source": "A",
+        "target": "B",
+        "weight": 2
+      },
+      {
+        "source": "A",
+        "target": "C",
+        "weight": 1
+      },
+      {
+        "source": "B",
+        "target": "D",
+        "weight": 3
+      },
+      {
+        "source": "C",
+        "target": "E",
+        "weight": 2
+      },
+      {
+        "source": "D",
+        "target": "F",
+        "weight": 1
+      },
+      {
+        "source": "E",
+        "target": "F",
+        "weight": 4
+      }
+    ],
+    "isDirected": false,
+    "metadata": {
+      "name": "Sample Graph",
+      "description": "A simple undirected graph for traversal visualization"
+    }
+  }
+  
