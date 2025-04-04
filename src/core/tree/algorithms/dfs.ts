@@ -18,34 +18,34 @@ export class TreeDFS implements Traversable<string | number | undefined> {
     this.isToBeVisited = new Set<string | number>(this.tree.getAllValues());
     this.states = [];
     this.path = [];
-    
+
     // Record initial state
     this.recordState('Initial', '');
   }
 
   traverse(startValue?: string | number): TraversalResult {
     Logger.logStep('🔍 Starting', 'Tree Depth-First Search...');
-    
+
     const root = this.tree.getRoot();
     if (!root) {
       throw new Error('Tree is empty');
     }
-    
+
     // If no start value is provided, use the root value
     const actualStartValue = startValue !== undefined ? startValue : root.value;
-    
+
     // Find the node with the start value
     const startNode = this.tree.getNodeByValue(actualStartValue);
-    
+
     if (!startNode) {
       throw new Error(`Start value "${actualStartValue}" not found in tree`);
     }
-    
+
     this.dfsRecursive(startNode);
-    
+
     return {
       path: this.path,
-      states: this.states
+      states: this.states,
     };
   }
 
@@ -53,10 +53,10 @@ export class TreeDFS implements Traversable<string | number | undefined> {
     this.visited.add(node.value);
     this.isToBeVisited.delete(node.value);
     this.path.push(node.value.toString());
-    
+
     // Record and visualize the current state
     this.recordState('Visiting', node.value.toString());
-    
+
     if (this.tree.isBinary()) {
       // Binary tree traversal
       if (node.left) {
@@ -66,7 +66,7 @@ export class TreeDFS implements Traversable<string | number | undefined> {
           this.recordState('Already visited', node.left.value.toString());
         }
       }
-      
+
       if (node.right) {
         if (!this.visited.has(node.right.value)) {
           this.dfsRecursive(node.right);
@@ -88,16 +88,16 @@ export class TreeDFS implements Traversable<string | number | undefined> {
     }
   }
 
-  private recordState(status: "Initial" | "Visiting" | "Already visited" | "Queued", current: string): void {
+  private recordState(status: 'Initial' | 'Visiting' | 'Already visited' | 'Queued', current: string): void {
     const state: TraversalState = {
       visited: Array.from(this.visited).map(v => v.toString()),
       toBeVisited: Array.from(this.isToBeVisited).map(v => v.toString()),
       current,
-      status
+      status,
     };
-    
+
     this.states.push(state);
-    
+
     // Only visualize if not in initial state with empty current
     if (!(status === 'Initial' && current === '')) {
       TreeVisualizer.visualizeTraversalState(state);

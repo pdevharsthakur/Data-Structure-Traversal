@@ -1,3 +1,3 @@
 export interface Visualizable<T> {
-    visualize(data:T): void;
+  visualize(data: T): void;
 }

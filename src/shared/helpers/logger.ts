@@ -1,3 +1,7 @@
+/**
+ * Utility for consistent, formatted console output with color styling.
+ * Provides methods for logging different types of messages with appropriate visual treatment.
+ */
 import chalk from 'chalk';
 
 export class Logger {
@@ -25,12 +29,7 @@ export class Logger {
     console.log(`\n${chalk.magenta(step)}: ${chalk.white(message)}`);
   }
 
-  static logState(state: {
-    current: string;
-    status: string;
-    visited: string[];
-    toBeVisited: string[];
-  }): void {
+  static logState(state: { current: string; status: string; visited: string[]; toBeVisited: string[] }): void {
     console.log(`\n${chalk.bold(state.status)}: ${chalk.yellow(state.current)}`);
     console.log(`${chalk.cyan('Visited:')} ${chalk.green(`[${state.visited.join(', ')}]`)}`);
     console.log(`${chalk.cyan('To Be Visited:')} ${chalk.magenta(`[${state.toBeVisited.join(', ')}]`)}`);

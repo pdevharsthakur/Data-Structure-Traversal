@@ -1,3 +1,7 @@
+/**
+ * Represents a graph data structure with support for directed/undirected graphs
+ * and weighted edges. Provides methods for graph manipulation and traversal.
+ */
 import type { GraphData } from '../../shared/types/graph.js';
 
 export class GraphModel {
@@ -27,10 +31,10 @@ export class GraphModel {
         sourceNeighbors.push(target);
         this.adjacencyList.set(source, sourceNeighbors);
       }
-      
+
       // Set weight
       this.weights.set(`${source}-${target}`, weight);
-      
+
       // For undirected graphs, add the reverse edge
       if (!directed && !this.isDirectedGraph) {
         const targetNeighbors = this.adjacencyList.get(target) || [];
@@ -65,26 +69,23 @@ export class GraphModel {
 
   static fromGraphData(graphData: GraphData): GraphModel {
     const graph = new GraphModel();
-    
-    // Set directed property
     graph.isDirectedGraph = graphData.isDirected || false;
-    
-    // Add metadata if available
+
     if (graphData.metadata) {
       graph.metadata = { ...graphData.metadata };
     }
-    
+
     // Add all vertices
     graphData.vertices.forEach(vertex => {
       graph.addVertex(vertex);
     });
-    
+
     // Add all edges
     graphData.edges.forEach(edge => {
       const { source, target, weight = 1, directed = graph.isDirectedGraph } = edge;
       graph.addEdge(source, target, weight, directed);
     });
-    
+
     return graph;
   }
 }

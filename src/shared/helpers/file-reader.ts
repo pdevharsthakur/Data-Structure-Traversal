@@ -1,3 +1,7 @@
+/**
+ * Utility for reading and parsing graph and tree data from JSON files.
+ * Provides validation and structured error handling for file operations.
+ */
 import fs from 'fs/promises';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -15,10 +19,10 @@ export class FileReader {
   static async readGraphFromFile(filePath: string): Promise<GraphData> {
     try {
       Logger.logStep('📂 Reading', `graph from file: ${filePath}`);
-      
+
       const fullPath = this.getFullPath(filePath);
       const fileContent = await fs.readFile(fullPath, 'utf-8');
-      
+
       return await this.parseJsonGraph(fileContent);
     } catch (error) {
       Logger.error(`Error reading graph file: ${(error as Error).message}`);
@@ -29,10 +33,10 @@ export class FileReader {
   static async readTreeFromFile(filePath: string): Promise<TreeData> {
     try {
       Logger.logStep('📂 Reading', `tree from file: ${filePath}`);
-      
+
       const fullPath = this.getFullPath(filePath);
       const fileContent = await fs.readFile(fullPath, 'utf-8');
-      
+
       return await this.parseJsonTree(fileContent);
     } catch (error) {
       Logger.error(`Error reading tree file: ${(error as Error).message}`);
@@ -42,19 +46,19 @@ export class FileReader {
 
   private static async parseJsonGraph(content: string): Promise<GraphData> {
     Logger.logStep('🔍 Parsing', 'JSON graph data...');
-    
+
     try {
       const jsonData = JSON.parse(content) as Partial<GraphData>;
-      
+
       // Validate the JSON structure
       if (!Array.isArray(jsonData.vertices)) {
         throw new Error('Invalid JSON format: "vertices" must be an array');
       }
-      
+
       if (!Array.isArray(jsonData.edges)) {
         throw new Error('Invalid JSON format: "edges" must be an array');
       }
-      
+
       // Convert edges to the expected format if necessary
       const validatedEdges = jsonData.edges.map(edge => {
         if (typeof edge === 'object' && edge !== null) {
@@ -66,14 +70,14 @@ export class FileReader {
           throw new Error('Invalid edge format: each edge must be an object');
         }
       });
-      
+
       const graphData: GraphData = {
         vertices: jsonData.vertices,
         edges: validatedEdges,
         isDirected: jsonData.isDirected,
-        metadata: jsonData.metadata
+        metadata: jsonData.metadata,
       };
-      
+
       Logger.success(`Successfully parsed ${graphData.vertices.length} vertices and ${graphData.edges.length} edges`);
       return graphData;
     } catch (error) {
@@ -83,25 +87,25 @@ export class FileReader {
 
   private static async parseJsonTree(content: string): Promise<TreeData> {
     Logger.logStep('🔍 Parsing', 'JSON tree data...');
-    
+
     try {
       const jsonData = JSON.parse(content) as Partial<TreeData>;
-      
+
       // Validate the JSON structure
       if (!jsonData.root) {
         throw new Error('Invalid JSON format: "root" is required');
       }
-      
+
       // Validate that the root has a value
       if (jsonData.root.value === undefined) {
         throw new Error('Invalid JSON format: root node must have a "value"');
       }
-      
+
       const treeData: TreeData = {
         root: jsonData.root,
-        metadata: jsonData.metadata
+        metadata: jsonData.metadata,
       };
-      
+
       Logger.success('Successfully parsed tree data');
       return treeData;
     } catch (error) {

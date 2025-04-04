@@ -1,3 +1,7 @@
+/**
+ * Provides user interface components and interaction handlers.
+ * Manages CLI-based user interactions with colorful prompts and informative displays.
+ */
 import inquirer from 'inquirer';
 import figlet from 'figlet';
 import chalk from 'chalk';
@@ -6,12 +10,12 @@ import { DataStructureType, TraversalType } from '../types/common.js';
 export class UIHelper {
   static async showWelcomeMessage(): Promise<void> {
     console.clear();
-    
-    const title = figlet.textSync('Traversal Visualizer', { 
+
+    const title = figlet.textSync('Traversal Visualizer', {
       horizontalLayout: 'full',
-      font: 'Big'
+      font: 'Big',
     });
-    
+
     console.log('\n' + chalk.cyan(title));
     console.log('\n' + chalk.yellow('A visualization tool for graph and tree traversal algorithms'));
     console.log('\n' + chalk.gray('──────────────────────────────────────────────────────────────'));
@@ -25,11 +29,11 @@ export class UIHelper {
         message: 'Select data structure to search:',
         choices: [
           { name: 'Graph', value: DataStructureType.Graph },
-          { name: 'Tree', value: DataStructureType.Tree }
-        ]
-      }
+          { name: 'Tree', value: DataStructureType.Tree },
+        ],
+      },
     ]);
-    
+
     return dataStructure;
   }
 
@@ -41,11 +45,11 @@ export class UIHelper {
         message: 'Select traversal algorithm:',
         choices: [
           { name: 'Depth-First Search (DFS)', value: TraversalType.DFS },
-          { name: 'Breadth-First Search (BFS)', value: TraversalType.BFS }
-        ]
-      }
+          { name: 'Breadth-First Search (BFS)', value: TraversalType.BFS },
+        ],
+      },
     ]);
-    
+
     return traversalType;
   }
 
@@ -55,25 +59,25 @@ export class UIHelper {
         type: 'list',
         name: 'startVertex',
         message: 'Select starting vertex:',
-        choices: vertices.sort()
-      }
+        choices: vertices.sort(),
+      },
     ]);
-    
+
     return startVertex;
   }
 
   static async selectStartNode(values: Array<string | number>): Promise<string | number> {
     const stringValues = values.map(v => v.toString());
-    
+
     const { startNode } = await inquirer.prompt([
       {
         type: 'list',
         name: 'startNode',
         message: 'Select starting node:',
-        choices: stringValues.sort()
-      }
+        choices: stringValues.sort(),
+      },
     ]);
-    
+
     return startNode;
   }
 
@@ -83,27 +87,26 @@ export class UIHelper {
         type: 'confirm',
         name: 'fromRoot',
         message: 'Start traversal from the root?',
-        default: true
-      }
+        default: true,
+      },
     ]);
-    
+
     return fromRoot;
   }
 
   static async promptForFilePath(dataStructure: DataStructureType): Promise<string> {
-    const defaultPath = dataStructure === DataStructureType.Graph 
-      ? './input/inputGraph.json'
-      : './input/inputTree.json';
-      
+    const defaultPath =
+      dataStructure === DataStructureType.Graph ? './input/inputGraph.json' : './input/inputTree.json';
+
     const { filePath } = await inquirer.prompt([
       {
         type: 'input',
         name: 'filePath',
         message: `Enter the path to the ${dataStructure.toLowerCase()} file (or press Enter for default):`,
-        default: defaultPath
-      }
+        default: defaultPath,
+      },
     ]);
-    
+
     return filePath || defaultPath;
   }
 }

@@ -1,3 +1,7 @@
+/**
+ * Provides visualization functionality for tree data structures and their traversal states.
+ * Supports rendering both binary and n-ary trees with ASCII art representation.
+ */
 import chalk from 'chalk';
 import { TreeModel } from './model.js';
 import type { TreeNode } from '../../shared/types/tree.js';
@@ -8,21 +12,21 @@ export class TreeVisualizer implements Visualizable<TreeModel> {
   static visualizeTree(tree: TreeModel): void {
     console.log('\n' + chalk.bold.cyan('📊 Tree Visualization:'));
     console.log(chalk.cyan('══════════════════════'));
-    
+
     const root = tree.getRoot();
     if (!root) {
       console.log(chalk.yellow('Empty tree'));
       return;
     }
-    
+
     const isBinary = tree.isBinary();
-    
+
     if (isBinary) {
       this.visualizeBinaryTree(root);
     } else {
       this.visualizeNaryTree(root);
     }
-    
+
     // Show metadata if available
     const metadata = tree.getMetadata();
     if (Object.keys(metadata).length > 0) {
@@ -31,7 +35,7 @@ export class TreeVisualizer implements Visualizable<TreeModel> {
         console.log(`  ${chalk.gray(key)}: ${chalk.white(String(value))}`);
       });
     }
-    
+
     console.log(chalk.cyan('══════════════════════\n'));
   }
 
@@ -44,10 +48,10 @@ export class TreeVisualizer implements Visualizable<TreeModel> {
 
   private static printBinaryTree(node: TreeNode | null, level: number, lines: string[]): void {
     if (!node) return;
-    
+
     // Print right subtree first (so it appears on top)
     this.printBinaryTree(node.right || null, level + 1, lines);
-    
+
     // Print current node
     let line = '    '.repeat(level);
     if (level > 0) {
@@ -55,7 +59,7 @@ export class TreeVisualizer implements Visualizable<TreeModel> {
     }
     line += chalk.yellow(node.value.toString());
     lines.push(line);
-    
+
     // Print left subtree
     this.printBinaryTree(node.left || null, level + 1, lines);
   }
@@ -66,23 +70,15 @@ export class TreeVisualizer implements Visualizable<TreeModel> {
 
   private static printNaryTree(node: TreeNode, prefix: string, isLast: boolean): void {
     // Print current node
-    console.log(
-      prefix + 
-      (isLast ? chalk.gray('└── ') : chalk.gray('├── ')) + 
-      chalk.yellow(node.value.toString())
-    );
-    
+    console.log(prefix + (isLast ? chalk.gray('└── ') : chalk.gray('├── ')) + chalk.yellow(node.value.toString()));
+
     // Print children
     if (node.children) {
       for (let i = 0; i < node.children.length; i++) {
         const child = node.children[i];
         if (child) {
           const isLastChild = i === node.children.length - 1;
-          this.printNaryTree(
-            child,
-            prefix + (isLast ? '    ' : chalk.gray('│   ')),
-            isLastChild
-          );
+          this.printNaryTree(child, prefix + (isLast ? '    ' : chalk.gray('│   ')), isLastChild);
         }
       }
     }

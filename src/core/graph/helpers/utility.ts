@@ -15,14 +15,10 @@ export class GraphUtility {
     // If all vertices were visited, the graph is connected
     return visited.size === vertices.length;
   }
-  
-  private static dfsForConnectivity(
-    graph: GraphModel, 
-    vertex: string, 
-    visited: Set<string>
-  ): void {
+
+  private static dfsForConnectivity(graph: GraphModel, vertex: string, visited: Set<string>): void {
     visited.add(vertex);
-    
+
     const neighbors = graph.getNeighbors(vertex);
     for (const neighbor of neighbors) {
       if (!visited.has(neighbor)) {
@@ -30,7 +26,7 @@ export class GraphUtility {
       }
     }
   }
-  
+
   /**
    * Checks if the graph has cycles
    */
@@ -38,7 +34,7 @@ export class GraphUtility {
     const vertices = graph.getAllVertices();
     const visited = new Set<string>();
     const recStack = new Set<string>();
-    
+
     for (const vertex of vertices) {
       if (!visited.has(vertex)) {
         if (this.isCyclicUtil(graph, vertex, visited, recStack)) {
@@ -46,19 +42,14 @@ export class GraphUtility {
         }
       }
     }
-    
+
     return false;
   }
-  
-  private static isCyclicUtil(
-    graph: GraphModel, 
-    vertex: string, 
-    visited: Set<string>, 
-    recStack: Set<string>
-  ): boolean {
+
+  private static isCyclicUtil(graph: GraphModel, vertex: string, visited: Set<string>, recStack: Set<string>): boolean {
     visited.add(vertex);
     recStack.add(vertex);
-    
+
     const neighbors = graph.getNeighbors(vertex);
     for (const neighbor of neighbors) {
       if (!visited.has(neighbor)) {
@@ -69,7 +60,7 @@ export class GraphUtility {
         return true;
       }
     }
-    
+
     recStack.delete(vertex);
     return false;
   }
