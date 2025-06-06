@@ -1,51 +1,34 @@
 # 🌳 Data Structure Traversal
 
-<div align="center">
-  <img src="https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript"/>
-  <img src="https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white" alt="Node.js"/>
-  <img src="https://img.shields.io/badge/bun-%23000000.svg?style=for-the-badge&logo=bun&logoColor=white" alt="Bun"/>
-</div>
+[![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Node.js](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/)
+[![Bun](https://img.shields.io/badge/bun-%23000000.svg?style=for-the-badge&logo=bun&logoColor=white)](https://bun.sh/)
 
-<p align="center">
-  <b>A TypeScript CLI application for visualizing and traversing common data structures</b>
-</p>
+A TypeScript CLI application for visualizing and traversing common data structures. Contributions are welcome!
 
-<hr />
 
-<div align="center">
-  <a href="#-overview">Overview</a> •
-  <a href="#-features">Features</a> •
-  <a href="#-project-structure">Project Structure</a> •
-  <a href="#-installation">Installation</a> •
-  <a href="#-usage">Usage</a> •
-  <a href="#-input-files">Input Files</a> •
-  <a href="#-technologies">Technologies</a>
-</div>
+## 📖 Table of Contents
 
-<hr />
+*   [📋 Overview](#-overview)
+*   [🚀 Features](#-features)
+*   [🗂️ Project Structure](#%F0%97%97%82%EF%B8%8F-project-structure)
+*   [📥 Installation](#-installation)
+*   [🚀 Usage](#-usage)
+*   [📝 Input Files](#-input-files)
+*   [🤝 Contributing](#-contributing)
+*   [🧰 Technologies](#%F0%97%A7%B0%EF%B8%8F-technologies)
+*   [🛠️ Why Bun?](#%F0%97%9B%A0%EF%B8%8F-why-bun)
+*   [📄 License](#-license)
+
 
 ## 📋 Overview
 
-<p align="center">
-  <img src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/algorithm/algorithm.png" width="100" />
-</p>
-
 Data Structure Traversal is an interactive command-line tool that allows you to visualize and traverse two fundamental data structures:
 
-<table>
-  <tr>
-    <td align="center" width="50%">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/6n-graf.svg/320px-6n-graf.svg.png" width="120" /><br />
-      <b>📊 Graphs</b><br />
-      <sub>(directed and undirected)</sub>
-    </td>
-    <td align="center" width="50%">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Binary_search_tree.svg/300px-Binary_search_tree.svg.png" width="120" /><br />
-      <b>🌲 Trees</b><br />
-      <sub>(binary trees)</sub>
-    </td>
-  </tr>
-</table>
+*   📊 **Graphs:** (directed and undirected)
+    ![Graph Example](https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/6n-graf.svg/320px-6n-graf.svg.png)
+*   🌲 **Trees:** (binary trees)
+    ![Binary Tree Example](https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Binary_search_tree.svg/300px-Binary_search_tree.png)
 
 The application demonstrates popular traversal algorithms including:
 
@@ -65,10 +48,8 @@ Explores all neighbors at the present depth before moving to nodes at the next d
 
 ## 🚀 Features
 
-<div align="center">
-
 | Feature                    | Description                                                     |
-| -------------------------- | --------------------------------------------------------------- |
+| :------------------------- | :-------------------------------------------------------------- |
 | ✨ **Interactive CLI**     | Intuitive user interface with guided prompts                    |
 | 📊 **Visualization**       | ASCII-based representations of graphs and trees in the terminal |
 | 🔍 **Multiple Algorithms** | Both DFS and BFS for each data structure                        |
@@ -76,28 +57,30 @@ Explores all neighbors at the present depth before moving to nodes at the next d
 | 🎯 **Type Safety**         | Fully TypeScript implementation with strict typing              |
 | 🎨 **Colorful Output**     | Enhanced readability with color-coded visualizations            |
 
-</div>
-
 ## 🗂️ Project Structure
+
+To help you navigate the codebase, here's an overview of the project directory:
 
 ```
 data-structure-traversal/
-├── 📁 dist/              # Compiled JavaScript files
-├── 📁 input/             # Example input files
-│   ├── 📄 inputGraph.json
-│   └── 📄 inputTree.json
-├── 📁 src/               # Source TypeScript files
-│   ├── 📁 core/          # Core data structure implementations
-│   │   ├── 📁 graph/     # Graph implementation and algorithms
-│   │   └── 📁 tree/      # Tree implementation and algorithms
-│   ├── 📁 shared/        # Shared utilities and types
-│   ├── 📁 schemas/       # JSON schemas for validation
-│   └── 📄 main.ts        # Application entry point
-├── 📄 tsconfig.json      # TypeScript configuration
-└── 📄 package.json       # Project metadata and dependencies
+├── dist/              # Compiled JavaScript files
+├── input/             # Example input files
+│   ├── inputGraph.json
+│   └── inputTree.json
+├── src/               # Source TypeScript files
+│   ├── core/          # Core data structure implementations
+│   │   ├── graph/     # Graph implementation and algorithms
+│   │   └── tree/      # Tree implementation and algorithms
+│   ├── shared/        # Shared utilities and types
+│   ├── schemas/       # JSON schemas for validation
+│   └── main.ts        # Application entry point
+├── tsconfig.json      # TypeScript configuration
+└── package.json       # Project metadata and dependencies
 ```
 
 ## 📥 Installation
+
+Follow these steps to set up the project locally:
 
 <details open>
 <summary><b>Step 1: Clone the repository</b></summary>
@@ -120,9 +103,7 @@ bun install
 
 ## 🚀 Usage
 
-<div align="center">
-  <img src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/terminal/terminal.png" width="80" />
-</div>
+Once installed, you can run the application with these commands:
 
 <details open>
 <summary><b>Step 1: Build the project</b></summary>
@@ -144,6 +125,7 @@ bun start
 
 <details open>
 <summary><b>Step 3: Follow the interactive prompts</b></summary>
+The CLI will guide you through the process:
 <ul>
   <li>✅ Select a data structure (Graph or Tree)</li>
   <li>✅ Provide the path to your input file</li>
@@ -154,7 +136,7 @@ bun start
 
 ## 📝 Input Files
 
-The application accepts JSON files as input with specific formats for each data structure.
+The application accepts JSON files as input with specific formats for each data structure. Example input files are located in the `input/` directory.
 
 <details open>
 <summary><b>🔗 Graph Input Format</b></summary>
@@ -219,92 +201,32 @@ The application accepts JSON files as input with specific formats for each data 
 
 </details>
 
-## 📄 License
-
-<div align="center">
-  <img src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/license/license.png" width="60" />
-  <p>Feel free to fork and use this project however you want.</p>
-</div>
-
 ## 🧰 Technologies
 
-<div align="center">
-  <table>
-    <tr>
-      <td align="center" width="20%">
-        <img src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/typescript/typescript.png" width="60" /><br />
-        <b><a href="https://www.typescriptlang.org/">TypeScript</a></b><br />
-        <sub>Strongly typed programming language</sub>
-      </td>
-      <td align="center" width="20%">
-        <img src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/nodejs/nodejs.png" width="60" /><br />
-        <b><a href="https://nodejs.org/">Node.js</a></b><br />
-        <sub>JavaScript runtime</sub>
-      </td>
-      <td align="center" width="20%">
-        <img src="https://user-images.githubusercontent.com/709451/182802334-d9c42afe-f35d-4a7b-86ea-9985f73f20c3.png" width="60" /><br />
-        <b><a href="https://bun.sh/">Bun</a></b><br />
-        <sub>JavaScript toolkit</sub>
-      </td>
-      <td align="center" width="20%">
-        <img src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/npm/npm.png" width="60" /><br />
-        <b><a href="https://github.com/SBoudrias/Inquirer.js/">Inquirer.js</a></b><br />
-        <sub>Interactive CLI</sub>
-      </td>
-      <td align="center" width="20%">
-        <img src="https://raw.githubusercontent.com/chalk/chalk/HEAD/media/logo.svg" width="60" /><br />
-        <b><a href="https://github.com/chalk/chalk">Chalk</a></b><br />
-        <sub>Terminal styling</sub>
-      </td>
-    </tr>
-  </table>
-</div>
+This project leverages the following key technologies:
+
+| Technology         | Description                                        |
+| :----------------- | :------------------------------------------------- |
+| **[TypeScript](https://www.typescriptlang.org/)** | A strongly typed programming language.           |
+| **[Node.js](https://nodejs.org/)**         | A JavaScript runtime environment.                |
+| **[Bun](https://bun.sh/)**           | A fast JavaScript toolkit, used here as a package manager. |
+| **[Inquirer.js](https://github.com/SBoudrias/Inquirer.js/)** | Provides an interactive command-line interface.  |
+| **[Chalk](https://github.com/chalk/chalk)**         | Enables expressive terminal styling with colors. |
+
 
 ## 🛠️ Why Bun?
 
-<div align="center">
-  <img src="https://user-images.githubusercontent.com/709451/182802334-d9c42afe-f35d-4a7b-86ea-9985f73f20c3.png" width="100" />
-  <p style="margin-top: 15px; margin-bottom: 25px;">This project uses Bun primarily as a package manager, not as a runtime environment.</p>
-</div>
+![Bun logo large](https://user-images.githubusercontent.com/709451/182802334-d9c42afe-f35d-4a7b-86ea-9985f73f20c3.png#gh-light-mode-only)
+![Bun logo large](https://user-images.githubusercontent.com/709451/182802334-d9c42afe-f35d-4a7b-86ea-9985f73f20c3.png#gh-dark-mode-only)
 
-<div align="center" style="display: grid; grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(2, 1fr); gap: 20px; margin: 0 auto; max-width: 900px;">
-  <div style="border: 1px solid #ddd; border-radius: 10px; padding: 24px; background-color: #f9f9f9;">
-    <div style="text-align: center;">
-      <div style="font-size: 32px; margin-bottom: 10px;">💼</div>
-      <h3 style="margin: 0 0 15px 0; color: #333; font-size: 20px; font-weight: 600;">Simple Node.js Project</h3>
-      <div style="width: 40px; height: 3px; background-color: #0074d9; margin: 0 auto 15px;"></div>
-      <p style="color: #555; line-height: 1.5;">Since this is not a fullstack application but rather a straightforward Node.js CLI tool, Bun serves as an excellent package manager with faster installation times compared to npm or yarn.</p>
-    </div>
-  </div>
-  
-  <div style="border: 1px solid #ddd; border-radius: 10px; padding: 24px; background-color: #f9f9f9;">
-    <div style="text-align: center;">
-      <div style="font-size: 32px; margin-bottom: 10px;">🛡️</div>
-      <h3 style="margin: 0 0 15px 0; color: #333; font-size: 20px; font-weight: 600;">Stability First</h3>
-      <div style="width: 40px; height: 3px; background-color: #0074d9; margin: 0 auto 15px;"></div>
-      <p style="color: #555; line-height: 1.5;">While Bun's runtime capabilities are impressive, we opted to use Node.js runtime for execution to ensure maximum stability, as Bun is still maturing as a platform.</p>
-    </div>
-  </div>
-  
-  <div style="border: 1px solid #ddd; border-radius: 10px; padding: 24px; background-color: #f9f9f9;">
-    <div style="text-align: center;">
-      <div style="font-size: 32px; margin-bottom: 10px;">🔮</div>
-      <h3 style="margin: 0 0 15px 0; color: #333; font-size: 20px; font-weight: 600;">Future-Ready</h3>
-      <div style="width: 40px; height: 3px; background-color: #0074d9; margin: 0 auto 15px;"></div>
-      <p style="color: #555; line-height: 1.5;">Using Bun as a package manager allows us to easily transition to Bun runtime in the future when it reaches greater maturity, without changing our workflow significantly.</p>
-    </div>
-  </div>
-  
-  <div style="border: 1px solid #ddd; border-radius: 10px; padding: 24px; background-color: #f9f9f9;">
-    <div style="text-align: center;">
-      <div style="font-size: 32px; margin-bottom: 10px;">⚡</div>
-      <h3 style="margin: 0 0 15px 0; color: #333; font-size: 20px; font-weight: 600;">Performance</h3>
-      <div style="width: 40px; height: 3px; background-color: #0074d9; margin: 0 auto 15px;"></div>
-      <p style="color: #555; line-height: 1.5;">Bun's package management is significantly faster than npm, which improves the developer experience especially for quick iterations.</p>
-    </div>
-  </div>
-</div>
+This project primarily leverages Bun as a package manager rather than a full runtime environment. This strategic choice offers a good balance between harnessing Bun's performance benefits and maintaining the stability and broad compatibility of Node.js.
 
-<div align="center" style="margin-top: 30px;">
-  <p>The approach provides a good balance between leveraging Bun's speed advantages while maintaining the stability and ecosystem compatibility of Node.js.</p>
-</div>
+### ✨ Key Reasons for Choosing Bun:
+
+*   **⚡ Performance:** Bun's package management capabilities are significantly faster than npm or yarn. This greatly enhances the developer experience, particularly during dependency installation and iterative development cycles.
+*   **💼 Simplicity for CLI:** For a straightforward Node.js command-line interface tool like this, Bun serves as an excellent, high-performance package manager that simplifies the development workflow without the complexities often associated with full-stack environments.
+*   **🛡️ Stability First:** To ensure maximum stability and wide ecosystem compatibility for execution, we've opted to use the Node.js runtime, as Bun is still actively maturing as a platform.
+*   **🔮 Future-Ready:** Adopting Bun as a package manager positions the project for an easy and seamless transition to the Bun runtime in the future, once it achieves greater maturity and widespread adoption, without requiring significant changes to our existing workflow.
+
+## 📄 License
+This project is licensed under the MIT License. Feel free to fork and use it as you wish.
